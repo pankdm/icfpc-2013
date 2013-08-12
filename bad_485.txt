@@ -1,0 +1,21 @@
+================================================================================
+Solving problem  485
+{u'operators': [u'if0', u'or', u'plus', u'shl1', u'shr16', u'tfold'], 'number': 485, u'id': u'RovuvNry6hqAGtEBCJIgVsMm', u'size': 15}
+[(2789245159971548692, 497693943335247057, 18333075476750278956L), (2307266683941581497, 7599723334012235164, 12568073944161868743L), (7883618184973541837, 9077893354896094611, 647428185899519925), (1544941801686878690, 16706990179954549270L, 13019411550371209286L), (15516769919813209666L, 4382381423515739655, 5547785924338764870), (0, 0, 0), (2594073385365405696, 16722059525100146250L, 11781394235203543875L)]
+First request at 2013-08-11 15:42:11
+making eval request by id =  RovuvNry6hqAGtEBCJIgVsMm
+url =  http://icfpc2013.cloudapp.net/eval?auth=0221FRTBh0LAPBFGAp53Eob3jBunlxFLStJWTO5kvpsH1H
+Error code: 200
+{"status":"ok","outputs":["0x0000000000000028","0x0000000000000022","0x000000000000006F","0x0000000000000017","0x00000000000000D9","0x0000000000000000","0x0000000000000024"]}
+
+Iterating 0
+Found  6 programs of size  2
+Found  18 programs of size  3
+Found  56 programs of size  4
+Found  178 programs of size  5
+Found  613 programs of size  6
+Found  2154 programs of size  7
+Found  7760 programs of size  8
+Found  28240 programs of size  9
+Found  104212 programs of size  10
+

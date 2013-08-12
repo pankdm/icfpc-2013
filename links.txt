@@ -1,0 +1,3 @@
+http://icfpc2013.cloudapp.net/ -- task
+http://icfpc2013.cloudapp.net/play.html?auth=0221FRTBh0LAPBFGAp53Eob3jBunlxFLStJWTO5kvpsH1H --- tes
+https://www.touchdevelop.com/users/MichalMoskal/icfpc2013/  -- playground

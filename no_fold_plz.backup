@@ -1,0 +1,133 @@
+import code
+import consts
+
+
+from expression import *
+from util import *
+from consts import *
+
+from graphs import get_arity
+from random import *
+
+# Returns array: n-th value = hash(possible values of all graphs of size n => count)
+def gen_tree_values(last, ops, keys, right_answer = ()):
+	result = [None] * (last + 1)
+	result[1] = {(0,)*len(keys): 1, (1,)*len(keys): 1}
+	result[1][tuple(keys)] = result[1].get(tuple(keys), 0) + 1
+
+	for i in xrange(2, last + 1):
+		st = {}
+		for op in ops:
+			ar = get_arity(op)
+			remain = i - 1
+			if ar == 1:
+				for prev_value, prev_count in result[remain].items():
+					new_value = tuple(map(lambda x: Op1(op, Var()).getx(x), prev_value))
+					new_count = prev_count
+					st[new_value] = st.get(new_value, 0) + new_count
+			elif ar == 2:
+				for c1 in xrange(1, remain):
+					c2 = remain - c1
+					assert c2 > 0
+					if c1 > c2: break
+					for prev_value1, prev_count1 in result[c1].items():
+						for prev_value2, prev_count2 in result[c2].items():
+							new_value = tuple(map(lambda x, y: Op2(op, Var('x'), Var('y')).get(x, y, None), prev_value1, prev_value2))
+							new_count = prev_count1 * prev_count2
+							st[new_value] = st.get(new_value, 0) + new_count
+			elif ar == 3:
+				for c1 in xrange(1, remain):
+					for c2 in xrange(1, remain - c1):
+						c3 = remain - c1 - c2
+						assert c3 > 0
+						for prev_value1, prev_count1 in result[c1].items():
+							for prev_value2, prev_count2 in result[c2].items():
+								for prev_value3, prev_count3 in result[c3].items():
+									new_value = tuple(map(lambda x, y, z: If0(Var('x'), Var('y'), Var('z')).get(x, y, z), prev_value1, prev_value2, prev_value3))
+									new_count = prev_count1 * prev_count2 * prev_count3
+									st[new_value] = st.get(new_value, 0) + new_count
+			print op,
+		print
+		result[i] = st
+		if right_answer != ():
+			if right_answer in st:
+				return result[:i+1]
+		print "%d step is done, size = %d" % (i, len(st))
+
+	return result
+
+def find_all_trees_with_values(trees_values, keys, true_values, ops):
+
+	recur_hash = {}
+	def recur(level, values):
+		res = []
+		assert values in trees_values[level]
+		if level == 1:
+			if values == (0,) * len(values):
+				res += [Const(0)]
+			if values == (1,) * len(values):
+				res += [Const(1)]
+			if values == tuple(keys):
+				res += [Var()]
+			return res
+		if (level, values) in recur_hash:
+			return recur_hash[level, values]
+		remain = level - 1
+		for op in ops:
+			ar = get_arity(op)
+			if ar == 1:
+				for prev_value in trees_values[remain]:
+					if tuple(map(lambda x: Op1(op, Var()).getx(x), prev_value)) == values:
+						for prev_tree in recur(remain, prev_value):
+							assert tuple(map(lambda x: Op1(op, prev_tree).getx(x), keys)) == values
+							res.append(Op1(op, prev_tree))
+			elif ar == 2:
+				for c1 in xrange(1, remain):
+					c2 = remain - c1
+					assert c2 > 0
+					if c1 > c2: break
+					for prev_value1 in trees_values[c1]:
+						for prev_value2 in trees_values[c2]:
+							if tuple(map(lambda x, y: Op2(op, Var('x'), Var('y')).get(x, y, None), prev_value1, prev_value2)) == values:
+								for prev_tree1 in recur(c1, prev_value1):
+									for prev_tree2 in recur(c2, prev_value2):
+										assert tuple(map(lambda x: Op2(op, prev_tree1, prev_tree2).getx(x), keys)) == values
+										res.append(Op2(op, prev_tree1, prev_tree2))
+			elif ar == 3:
+				for c1 in xrange(1, remain):
+					for c2 in xrange(1, remain - c1):
+						c3 = remain - c1 - c2
+						assert c3 > 0
+						for prev_value1 in trees_values[c1]:
+							for prev_value2 in trees_values[c2]:
+								for prev_value3 in trees_values[c3]:
+									if tuple(map(lambda x, y, z: If0(Var('x'), Var('y'), Var('z')).get(x, y, z), prev_value1, prev_value2, prev_value3)) == values:
+										for prev_tree1 in recur(c1, prev_value1):
+											for prev_tree2 in recur(c2, prev_value2):
+												for prev_tree3 in recur(c3, prev_value3):
+													assert tuple(map(lambda x: If0(prev_tree1, prev_tree2, prev_tree3).getx(x), keys)) == values
+													res.append(If0(prev_tree1, prev_tree2, prev_tree3))
+		recur_hash[level, values] = res
+		return res
+
+	return recur(len(trees_values) - 1, true_values)
+
+def f(x):
+	if (x >> 20) == 0:
+		q = 1
+	else:
+		q = x | 1
+	return x + (x & q)
+	return x + 1 - (x & 1)
+
+if __name__ == "__main__":
+	OPS = ["not", "and", "or", "xor", "shr1", "shr4", "shr16", "plus", "shl1", "if0"]
+	OPS = ["and","if0","or","plus","shr16","shr4"]
+	AR = tuple([randint(0, LAST) for i in xrange(10)])
+
+	g = gen_tree_values(17, OPS, AR, tuple(map(f, AR)))
+	print sum(g[-1].values()), len(g[-1]), g[-1][tuple(map(f, AR))]
+	h = find_all_trees_with_values(g, AR, tuple(map(f, AR)), OPS)
+	for a in h:
+		print a.dump(), map(lambda x: a.getx(x), AR)
+	print len(h)

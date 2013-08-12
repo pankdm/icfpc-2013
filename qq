@@ -1,0 +1,878 @@
+step 0
+NaN set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'not', 'if0', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], '1'), ([], '0'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'x'), ([], 'not'), ([], 'if0'), ([], 'or')]
+choice [] shr16
+shr16 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'not', 'if0', 'or']) True
+shr16 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'not', 'if0', 'or']) True
+choice [] shr16 True
+NaN 1439
+(shr16 NaN) 1440
+================================================================================
+step 1
+NaN set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'not', 'if0', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shl1'), ([], '1'), ([], '0'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'x'), ([], 'not'), ([], 'if0'), ([], 'or')]
+choice [] plus
+plus 2 set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'not', 'if0', 'or']) True
+plus 1 set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'not', 'if0', 'or']) True
+choice [] plus True
+NaN 1439
+(shr16 NaN) 1440
+(plus NaN NaN) 1441
+================================================================================
+step 2
+NaN set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'shr1', 'x', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'shr1', 'x', 'not', 'if0', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shl1'), ([], '1'), ([], '0'), ([], 'shr4'), ([], 'shr1'), ([], 'x'), ([], 'not'), ([], 'if0'), ([], 'or')]
+choice [] shr1
+shr1 1 set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'shr1', 'x', 'not', 'if0', 'or']) True
+shr1 1 set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'shr1', 'x', 'not', 'if0', 'or']) True
+choice [] shr1 True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+================================================================================
+step 3
+NaN set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'x', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'x', 'not', 'if0', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shl1'), ([], '1'), ([], '0'), ([], 'shr4'), ([], 'x'), ([], 'not'), ([], 'if0'), ([], 'or')]
+choice [] 0
+0 0 set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'x', 'not', 'if0', 'or']) True
+0 1 set(['and', 'xor', 'shl1', '1', '0', 'shr4', 'x', 'not', 'if0', 'or']) True
+choice [] 0 True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+================================================================================
+step 4
+NaN set(['and', 'xor', 'shl1', '1', 'shr4', 'x', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shl1', '1', 'shr4', 'x', 'not', 'if0', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shl1'), ([], '1'), ([], 'shr4'), ([], 'x'), ([], 'not'), ([], 'if0'), ([], 'or')]
+choice [] if0
+if0 3 set(['and', 'xor', 'shl1', '1', 'shr4', 'x', 'not', 'if0', 'or']) True
+if0 1 set(['and', 'xor', 'shl1', '1', 'shr4', 'x', 'not', 'if0', 'or']) True
+choice [] if0 True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+================================================================================
+step 5
+NaN set(['and', 'xor', 'shl1', '1', 'shr4', 'x', 'not', 'or'])
+[([], set(['and', 'xor', 'shl1', '1', 'shr4', 'x', 'not', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shl1'), ([], '1'), ([], 'shr4'), ([], 'x'), ([], 'not'), ([], 'or')]
+choice [] x
+x 0 set(['and', 'xor', 'shl1', '1', 'shr4', 'x', 'not', 'or']) True
+x 1 set(['and', 'xor', 'shl1', '1', 'shr4', 'x', 'not', 'or']) True
+choice [] x True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+================================================================================
+step 6
+NaN set(['and', 'xor', 'shl1', '1', 'shr4', 'not', 'or'])
+[([], set(['and', 'xor', 'shl1', '1', 'shr4', 'not', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shl1'), ([], '1'), ([], 'shr4'), ([], 'not'), ([], 'or')]
+choice [] xor
+xor 2 set(['and', 'xor', 'shl1', '1', 'shr4', 'not', 'or']) True
+xor 1 set(['and', 'xor', 'shl1', '1', 'shr4', 'not', 'or']) True
+choice [] xor True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+================================================================================
+step 7
+NaN set(['and', 'shl1', '1', 'shr4', 'not', 'or'])
+[([], set(['and', 'shl1', '1', 'shr4', 'not', 'or']))]
+choices [([], 'and'), ([], 'shl1'), ([], '1'), ([], 'shr4'), ([], 'not'), ([], 'or')]
+choice [] and
+and 2 set(['and', 'shl1', '1', 'shr4', 'not', 'or']) True
+and 1 set(['and', 'shl1', '1', 'shr4', 'not', 'or']) True
+choice [] and True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+================================================================================
+step 8
+NaN set(['shl1', '1', 'shr4', 'not', 'or'])
+[([], set(['shl1', '1', 'shr4', 'not', 'or']))]
+choices [([], 'shl1'), ([], '1'), ([], 'shr4'), ([], 'not'), ([], 'or')]
+choice [] not
+not 1 set(['shl1', '1', 'shr4', 'not', 'or']) True
+not 1 set(['shl1', '1', 'shr4', 'not', 'or']) True
+choice [] not True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(not NaN) 1502
+================================================================================
+step 9
+NaN set(['shl1', '1', 'shr4', 'or'])
+[([], set(['shl1', '1', 'shr4', 'or']))]
+choices [([], 'shl1'), ([], '1'), ([], 'shr4'), ([], 'or')]
+choice [] 1
+1 0 set(['shl1', '1', 'shr4', 'or']) True
+1 1 set(['shl1', '1', 'shr4', 'or']) True
+choice [] 1 True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(not NaN) 1502
+================================================================================
+step 10
+NaN set(['shl1', 'shr4', 'or'])
+[([], set(['shl1', 'shr4', 'or']))]
+choices [([], 'shl1'), ([], 'shr4'), ([], 'or')]
+choice [] or
+or 2 set(['shl1', 'shr4', 'or']) True
+or 1 set(['shl1', 'shr4', 'or']) True
+choice [] or True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(not NaN) 1502
+================================================================================
+step 11
+NaN set(['shl1', 'shr4'])
+[([], set(['shl1', 'shr4']))]
+choices [([], 'shl1'), ([], 'shr4')]
+choice [] shl1
+shl1 1 set(['shl1', 'shr4']) True
+shl1 1 set(['shl1', 'shr4']) True
+choice [] shl1 True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(not NaN) 1502
+================================================================================
+step 12
+NaN set(['shr4'])
+[([], set(['shr4']))]
+choices [([], 'shr4')]
+choice [] shr4
+shr4 1 set(['shr4']) True
+shr4 1 set(['shr4']) True
+choice [] shr4 True
+NaN 1439
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(not NaN) 1502
+================================================================================
+step 13
+NaN set([])
+[([], set([]))]
+==== deleted NaN
+step 14
+(shr16 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shr16', 'shl1', 'if0', '1', '0', 'shr4', 'plus', 'shr1', 'not', 'x', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shr16'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'plus'), ([0], 'shr1'), ([0], 'not'), ([0], 'x'), ([0], 'or')]
+choice [] shr4
+shr4 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or']) True
+shr4 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or']) True
+choice [] shr4 True
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(not NaN) 1502
+================================================================================
+step 15
+(shr1 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'shr1'), ([0], 'not'), ([0], 'x'), ([0], 'or')]
+choice [0] or
+or 2 set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x', 'or']) True
+or 1 set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x', 'or']) True
+choice [0] or True
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(not NaN) 1502
+================================================================================
+step 16
+(shl1 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['shl1', 'shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'shl1'), ([0], 'shr4')]
+choice [] not
+not 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or']) True
+not 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or']) True
+choice [] not True
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(not NaN) 1502
+================================================================================
+step 17
+(shr4 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'shr4')]
+choice [] if0
+if0 3 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or']) True
+if0 3 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or']) True
+choice [] if0 True
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 18
+(shr16 NaN) set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shr16', 'shl1', 'if0', '1', '0', 'shr4', 'plus', 'shr1', 'not', 'x', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shr16'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'plus'), ([0], 'shr1'), ([0], 'not'), ([0], 'x'), ([0], 'or')]
+choice [0] not
+not 1 set(['and', 'xor', 'shr16', 'shl1', 'if0', '1', '0', 'shr4', 'plus', 'shr1', 'not', 'x', 'or']) True
+not 1 set(['and', 'xor', 'shr16', 'shl1', 'if0', '1', '0', 'shr4', 'plus', 'shr1', 'not', 'x', 'or']) True
+choice [0] not True
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 19
+(shr1 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'shr1'), ([0], 'not'), ([0], 'x')]
+choice [] or
+or 2 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or']) True
+or 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0', 'or']) True
+choice [] or True
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 20
+(shl1 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'if0', 'or'])), ([0], set(['shl1', 'shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'if0'), ([], 'or'), ([0], 'shl1'), ([0], 'shr4')]
+choice [] shr1
+shr1 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'if0', 'or']) True
+shr1 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'if0', 'or']) True
+choice [] shr1 True
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 21
+(shr4 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'or'), ([0], 'shr4')]
+choice [] shr4
+shr4 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'or']) True
+shr4 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'or']) True
+choice [] shr4 True
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 22
+(shr16 NaN) set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shr16', 'shl1', 'if0', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shr16'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'plus'), ([0], 'shr1'), ([0], 'x'), ([0], 'or')]
+choice [0] if0
+if0 3 set(['and', 'xor', 'shr16', 'shl1', 'if0', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'or']) True
+if0 1 set(['and', 'xor', 'shr16', 'shl1', 'if0', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'or']) True
+choice [0] if0 True
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 23
+(shr1 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0'])), ([0], set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([0], 'and'), ([0], 'xor'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'shr1'), ([0], 'not'), ([0], 'x')]
+choice [] shr1
+shr1 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0']) True
+shr1 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'shr1', 'not', 'if0']) True
+choice [] shr1 True
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 24
+(shl1 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'if0', 'or'])), ([0], set(['shl1', 'shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'if0'), ([], 'or'), ([0], 'shl1'), ([0], 'shr4')]
+choice [0] shl1
+shl1 1 set(['shl1', 'shr4']) True
+shl1 1 set(['shl1', 'shr4']) True
+choice [0] shl1 True
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 25
+(shr4 NaN) set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'or'), ([0], 'shr4')]
+choice [] shl1
+shl1 1 set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'or']) True
+shl1 1 set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'or']) True
+choice [] shl1 True
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 26
+(shr16 NaN) set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shr16'), ([0], 'shl1'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'plus'), ([0], 'shr1'), ([0], 'x'), ([0], 'or')]
+choice [0] shr4
+shr4 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'or']) True
+shr4 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'shr4', 'plus', 'shr1', 'x', 'or']) True
+choice [0] shr4 True
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 27
+(shr1 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0'])), ([0], set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'not'), ([], 'if0'), ([0], 'and'), ([0], 'xor'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'shr1'), ([0], 'not'), ([0], 'x')]
+choice [] and
+and 2 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0']) True
+and 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0']) True
+choice [] and True
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 28
+(shl1 NaN) set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'if0', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'if0'), ([], 'or'), ([0], 'shr4')]
+choice [] shl1
+shl1 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'if0', 'or']) True
+shl1 1 set(['and', 'xor', 'shr16', 'shl1', 'shr4', 'plus', 'if0', 'or']) True
+choice [] shl1 True
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 29
+(shr4 NaN) set(['and', 'xor', 'shr16', 'plus', 'shr1', 'not', 'or'])
+[([], set(['and', 'xor', 'shr16', 'plus', 'shr1', 'not', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'or'), ([0], 'shr4')]
+choice [] plus
+plus 2 set(['and', 'xor', 'shr16', 'plus', 'shr1', 'not', 'or']) True
+plus 1 set(['and', 'xor', 'shr16', 'plus', 'shr1', 'not', 'or']) True
+choice [] plus True
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 30
+(shr16 NaN) set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'shr1', 'x', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shr16'), ([0], 'shl1'), ([0], '1'), ([0], '0'), ([0], 'plus'), ([0], 'shr1'), ([0], 'x'), ([0], 'or')]
+choice [0] x
+x 0 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'shr1', 'x', 'or']) True
+x 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'shr1', 'x', 'or']) True
+choice [0] x True
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 31
+(shr1 NaN) set(['xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0'])
+[([], set(['xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0'])), ([0], set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x']))]
+choices [([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'not'), ([], 'if0'), ([0], 'and'), ([0], 'xor'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], '0'), ([0], 'shr4'), ([0], 'shr1'), ([0], 'not'), ([0], 'x')]
+choice [0] 0
+0 0 set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x']) True
+0 1 set(['and', 'xor', 'shl1', 'if0', '1', '0', 'shr4', 'shr1', 'not', 'x']) True
+choice [0] 0 True
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 32
+(shl1 NaN) set(['and', 'xor', 'shr16', 'shr4', 'plus', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shr4', 'plus', 'if0', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shr4'), ([], 'plus'), ([], 'if0'), ([], 'or'), ([0], 'shr4')]
+choice [] if0
+if0 3 set(['and', 'xor', 'shr16', 'shr4', 'plus', 'if0', 'or']) True
+if0 3 set(['and', 'xor', 'shr16', 'shr4', 'plus', 'if0', 'or']) True
+choice [] if0 True
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 33
+(shr4 NaN) set(['and', 'xor', 'shr16', 'shr1', 'not', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shr1', 'not', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shr1'), ([], 'not'), ([], 'or'), ([0], 'shr4')]
+choice [] not
+not 1 set(['and', 'xor', 'shr16', 'shr1', 'not', 'or']) True
+not 1 set(['and', 'xor', 'shr16', 'shr1', 'not', 'or']) True
+choice [] not True
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 34
+(shr16 NaN) set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'shr1', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shr16'), ([0], 'shl1'), ([0], '1'), ([0], '0'), ([0], 'plus'), ([0], 'shr1'), ([0], 'or')]
+choice [0] shr1
+shr1 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'shr1', 'or']) True
+shr1 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'shr1', 'or']) True
+choice [0] shr1 True
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 35
+(shr1 NaN) set(['xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0'])
+[([], set(['xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0'])), ([0], set(['and', 'xor', 'shl1', 'if0', '1', 'shr4', 'shr1', 'not', 'x']))]
+choices [([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'not'), ([], 'if0'), ([0], 'and'), ([0], 'xor'), ([0], 'shl1'), ([0], 'if0'), ([0], '1'), ([0], 'shr4'), ([0], 'shr1'), ([0], 'not'), ([0], 'x')]
+choice [0] 1
+1 0 set(['and', 'xor', 'shl1', 'if0', '1', 'shr4', 'shr1', 'not', 'x']) True
+1 1 set(['and', 'xor', 'shl1', 'if0', '1', 'shr4', 'shr1', 'not', 'x']) True
+choice [0] 1 True
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 36
+(shl1 NaN) set(['and', 'xor', 'shr16', 'shr4', 'plus', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shr4', 'plus', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shr4'), ([], 'plus'), ([], 'or'), ([0], 'shr4')]
+choice [] plus
+plus 2 set(['and', 'xor', 'shr16', 'shr4', 'plus', 'or']) True
+plus 1 set(['and', 'xor', 'shr16', 'shr4', 'plus', 'or']) True
+choice [] plus True
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(plus (shl1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 37
+(shr4 NaN) set(['and', 'xor', 'shr16', 'shr1', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shr1', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shr1'), ([], 'or'), ([0], 'shr4')]
+choice [0] shr4
+shr4 1 set(['shr4']) True
+shr4 1 set(['shr4']) True
+choice [0] shr4 True
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(plus (shl1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 38
+(shr16 NaN) set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shl1', 'plus', 'shr1', 'not', 'if0', 'or'])), ([0], set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'or']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'plus'), ([], 'shr1'), ([], 'not'), ([], 'if0'), ([], 'or'), ([0], 'and'), ([0], 'xor'), ([0], 'shr16'), ([0], 'shl1'), ([0], '1'), ([0], '0'), ([0], 'plus'), ([0], 'or')]
+choice [0] shl1
+shl1 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'or']) True
+shl1 1 set(['and', 'xor', 'shr16', 'shl1', '1', '0', 'plus', 'or']) True
+choice [0] shl1 True
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(plus (shl1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 39
+(shr1 NaN) set(['xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0'])
+[([], set(['xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0'])), ([0], set(['and', 'xor', 'shl1', 'if0', 'shr4', 'shr1', 'not', 'x']))]
+choices [([], 'xor'), ([], 'shr16'), ([], 'shl1'), ([], 'shr4'), ([], 'plus'), ([], 'not'), ([], 'if0'), ([0], 'and'), ([0], 'xor'), ([0], 'shl1'), ([0], 'if0'), ([0], 'shr4'), ([0], 'shr1'), ([0], 'not'), ([0], 'x')]
+choice [] xor
+xor 2 set(['xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0']) True
+xor 1 set(['xor', 'shr16', 'shl1', 'shr4', 'plus', 'not', 'if0']) True
+choice [] xor True
+(shl1 NaN) 1440
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(plus (shl1 NaN) NaN) 1442
+(xor (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 40
+(shl1 NaN) set(['and', 'xor', 'shr16', 'shr4', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shr4', 'or'])), ([0], set(['shr4']))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shr4'), ([], 'or'), ([0], 'shr4')]
+choice [0] shr4
+shr4 1 set(['shr4']) True
+shr4 1 set(['shr4']) True
+choice [0] shr4 True
+(shr4 NaN) 1440
+(shr16 NaN) 1440
+(shr1 NaN) 1440
+(shl1 NaN) 1440
+(plus NaN NaN) 1441
+(xor NaN NaN) 1441
+(and NaN NaN) 1441
+(or NaN NaN) 1441
+(if0 NaN NaN NaN) 1442
+(or (shr1 NaN) NaN) 1442
+(and (shr1 NaN) NaN) 1442
+(plus (shr4 NaN) NaN) 1442
+(plus (shl1 NaN) NaN) 1442
+(xor (shr1 NaN) NaN) 1442
+(if0 (shr4 NaN) NaN NaN) 1443
+(if0 NaN (shr4 NaN) NaN) 1443
+(if0 NaN NaN (shr4 NaN)) 1443
+(if0 (shl1 NaN) NaN NaN) 1443
+(if0 NaN (shl1 NaN) NaN) 1443
+(if0 NaN NaN (shl1 NaN)) 1443
+(not NaN) 1502
+================================================================================
+step 41
+(shr4 NaN) set(['and', 'xor', 'shr16', 'shr1', 'or'])
+[([], set(['and', 'xor', 'shr16', 'shr1', 'or'])), ([0], set([]))]
+choices [([], 'and'), ([], 'xor'), ([], 'shr16'), ([], 'shr1'), ([], 'or')]
+choice [] and
+and 2 set(['and', 'xor', 'shr16', 'shr1', 'or']) True
+and 1 set(['and', 'xor', 'shr16', 'shr1', 'or']) True
+choice [] and True

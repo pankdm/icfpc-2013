@@ -1,0 +1,225 @@
+import psyco
+psyco.full()
+
+import code
+import consts
+
+
+from expression import *
+from util import *
+from consts import *
+
+from graphs import get_arity
+from random import *
+
+from proxy import Proxy
+proxy = Proxy()
+
+def op1_getx(op, x):
+	if op == "not": v = not64(x)
+	elif op == "shr1": v = shr1(x)
+	elif op == "shr4": v = shr4(x)
+	elif op == "shr16": v = shr16(x)
+	elif op == "shl1": v = shl1(x)
+	else: assert False, "unknown operator: " + op
+	return v
+
+def op2_getxy(op, x, y):
+	if op == "and": v = x & y
+	elif op == "or": v = x | y
+	elif op == "xor": v = x ^ y
+	elif op == "plus": v = plus(x, y)
+	else: assert False, "unknown operator: " + op
+	return v
+
+# Returns array: n-th value = set(possible values of all graphs of size n)
+def gen_tree_values(last, ops, keys, right_answer = ()):
+	result = [None] * (last + 1)
+	result[1] = set([(0,)*len(keys), (1,)*len(keys), tuple(keys)])
+
+	for i in xrange(2, last + 1):
+		st = set()
+		for op in ops:
+			ar = get_arity(op)
+			remain = i - 1
+			if ar == 1:
+				for prev_value in result[remain]:
+					new_value = tuple(map(lambda x: op1_getx(op, x), prev_value))
+					st.add(new_value)
+			elif ar == 2:
+				for c1 in xrange(1, remain):
+					c2 = remain - c1
+					#assert c2 > 0
+					if c1 > c2: break
+					for prev_value1 in result[c1]:
+						for prev_value2 in result[c2]:
+							new_value = tuple(map(lambda x, y: op2_getxy(op, x, y), prev_value1, prev_value2))
+							st.add(new_value)
+			elif ar == 3:
+				for c1 in xrange(1, remain):
+					for c2 in xrange(1, remain - c1):
+						c3 = remain - c1 - c2
+						#assert c3 > 0
+						for prev_value1 in result[c1]:
+							for prev_value2 in result[c2]:
+								for prev_value3 in result[c3]:
+									new_value = tuple(map(lambda x, y, z: if0(x, y, z), prev_value1, prev_value2, prev_value3))
+									st.add(new_value)
+			print op,
+		print
+		result[i] = st
+		if right_answer != ():
+			if right_answer in st:
+				return result[:i+1]
+		print "%d step is done, size = %d" % (i, len(st))
+
+	return result
+
+def find_all_trees_with_values(trees_values, keys, true_values, ops):
+
+	recur_hash = {}
+	def recur(level, values):
+		res = []
+		#assert values in trees_values[level]
+		if level == 1:
+			if values == (0,) * len(values):
+				res += [Const(0)]
+			if values == (1,) * len(values):
+				res += [Const(1)]
+			if values == tuple(keys):
+				res += [Var()]
+			return res
+		if (level < 6) and ((level, values) in recur_hash):
+			return recur_hash[level, values]
+		remain = level - 1
+		print level, len(recur_hash)
+		for op in ops:
+			ar = get_arity(op)
+			if ar == 1:
+				for prev_value in trees_values[remain]:
+					if tuple(map(lambda x: op1_getx(op, x), prev_value)) == values:
+						for prev_tree in recur(remain, prev_value):
+							#assert tuple(map(lambda x: Op1(op, prev_tree).getx(x), keys)) == values
+							res.append(Op1(op, prev_tree))
+			elif ar == 2:
+				for c1 in xrange(1, remain):
+					c2 = remain - c1
+					#assert c2 > 0
+					if c1 > c2: break
+					for prev_value1 in trees_values[c1]:
+						for prev_value2 in trees_values[c2]:
+							if tuple(map(lambda x, y: op2_getxy(op, x, y), prev_value1, prev_value2)) == values:
+								for prev_tree1 in recur(c1, prev_value1):
+									for prev_tree2 in recur(c2, prev_value2):
+										#assert tuple(map(lambda x: Op2(op, prev_tree1, prev_tree2).getx(x), keys)) == values
+										res.append(Op2(op, prev_tree1, prev_tree2))
+			elif ar == 3:
+				for c1 in xrange(1, remain):
+					for c2 in xrange(1, remain - c1):
+						c3 = remain - c1 - c2
+						#assert c3 > 0
+						for prev_value1 in trees_values[c1]:
+							for prev_value2 in trees_values[c2]:
+								for prev_value3 in trees_values[c3]:
+									if tuple(map(lambda x, y, z: if0(x, y, z), prev_value1, prev_value2, prev_value3)) == values:
+										for prev_tree1 in recur(c1, prev_value1):
+											for prev_tree2 in recur(c2, prev_value2):
+												for prev_tree3 in recur(c3, prev_value3):
+													#assert tuple(map(lambda x: If0(prev_tree1, prev_tree2, prev_tree3).getx(x), keys)) == values
+													res.append(If0(prev_tree1, prev_tree2, prev_tree3))
+		if level < 6: recur_hash[level, values] = res
+		return res
+
+	return recur(len(trees_values) - 1, true_values)
+
+def f(x):
+	if (x >> 20) == 0:
+		q = 1
+	else:
+		q = x | 1
+	return (x + (x & q)) & LAST
+
+def find_first_good2(trees, index, xs, ys):
+	print 'Filtering', len(trees), 'trees from index', index 
+	for i in xrange(index, len(trees)):
+		c = trees[i]
+		good = True
+		for j in xrange(len(xs)):
+			value = c.getx(xs[j])
+			expected = ys[j]
+			if value != expected:
+				good = False
+				break
+		if good:
+			print 'Stopped at', i
+			return i	
+	print 'Error: Nothing found'
+
+def solve2(p):
+	if "solved" in p: 
+		print 'Already solved!'
+		return
+
+	ops = p["operators"]
+	if ("fold" in ops) or ("tfold" in ops):
+		print "solving only without fold"
+		return
+
+	AR = tuple([randint(0, LAST) for i in xrange(20)])
+	g = gen_tree_values(p["size"], ops, AR)
+
+	hex_input = map(to_hex, AR)
+
+	data = proxy.make_eval(p["id"], hex_input)
+	right_answers = tuple(map(from_hex, data["outputs"]))
+
+	print "right_answers =", right_answers
+
+	h = find_all_trees_with_values(g, AR, right_answers, ops)
+	print "Found %d functions" % len(h)
+	index = 0
+	xs, ys = [], []
+	for i in xrange(1000):
+		print
+		print 'Iterating', i
+
+		# if i < 10:
+		# 	ans = [Const(0)] + ans
+
+		solution = dump_program(h[index])
+		print 'solution = ', solution
+		data = proxy.make_guess(p["id"], solution)
+		status = data["status"]
+		if status == "win":
+			print
+			print 'GOT IT!!!'
+			break
+
+		if status == "error":
+			print 'Error!, proceeding to another guess'
+			index += 1
+
+		if status == "mismatch":
+			x, y, my = map(from_hex, data["values"])
+			xs.append(x)
+			ys.append(y)
+			index = find_first_good2(h, index, xs, ys)
+
+if __name__ == "__main__":
+	seed(0)
+	Config.TRAINING = True
+	p = proxy.make_train(12)
+	solve2(p)
+	
+	exit()
+
+	OPS = ["not", "and", "or", "xor", "shr1", "shr4", "shr16", "plus", "shl1", "if0"]
+	OPS = ["and","if0","or","plus","shr16","shr4"]
+	AR = tuple([randint(0, LAST) for i in xrange(1)])
+
+	g = gen_tree_values(12, OPS, AR, tuple(map(f, AR)))
+	print len(g[-1]), tuple(map(f, AR)) in g[-1]
+	h = find_all_trees_with_values(g, AR, tuple(map(f, AR)), OPS)
+	for a in h:
+		print a.dump()#, map(lambda x: a.getx(x), AR)
+	print len(h)

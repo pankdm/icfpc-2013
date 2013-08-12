@@ -1,0 +1,2 @@
+{u'operators': [u'and', u'if0', u'not', u'or', u'plus', u'shl1', u'shr4', u'tfold', u'xor'], 'number': 1539, u'id': u'dVDTKY0AYXy8LOl7mNNDZ6Ot', u'size': 29}
+(fold x 0 (lambda (y z) (shl1 y)))
