@@ -5,6 +5,8 @@ Team "Snakes vs Lambdas" @ ICFPC 2013
 
 Our score is 1182
 
+![](icfpc-2013-scores.png)
+
 All Results: http://icfpc2013.cloudapp.net/
 
 ```
