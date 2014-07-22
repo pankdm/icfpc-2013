@@ -3,7 +3,9 @@ icfpc-2013
 
 Team "Snakes vs Lambdas" @ ICFPC 2013
 
-Our score is 1182
+Write-up: http://codeforces.ru/blog/entry/8591 (in russian)
+
+Our score is `1182`
 
 ![](icfpc-2013-scores.png)
 
