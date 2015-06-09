@@ -1,7 +1,10 @@
 icfpc-2013
 ==========
 
-Team "Snakes vs Lambdas" @ ICFPC 2013
+Team "Snakes vs Lambdas" @ ICFPC 2013:
+ * Oleg Gritcenko
+ * Dmitry Panin
+ * Alexey Tarasov
 
 Write-up: http://codeforces.ru/blog/entry/8591 (in russian)
 
